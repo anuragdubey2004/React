@@ -1,0 +1,14 @@
+*{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.card{
+    background-color: blue;
+    color: rgb(146, 5, 5);
+}
+h1{
+    color: black;
+}
