@@ -1,0 +1,30 @@
+*{
+  padding:0px;
+  margin: 0px;
+}
+
+html, body{
+  height: 100%;
+  width:100%;
+}
+
+.nav{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+  align-items: center;
+  background-color: blue;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.nav2{
+  display: flex;
+  gap:30px;
+  font-weight: bold;
+  font-size: larger;
+}
+
+#theme{
+  color:white
+}
