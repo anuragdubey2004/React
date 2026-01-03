@@ -1,34 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import {Routes, Route} from 'react-router-dom'
+import Product from './pages/Product'
+import About from './pages/About'
+import Home from './pages/Home'
+import NotFound from './pages/NotFound'
+import Men from './pages/Men'
+import Women from './pages/Women'
+import Courses from './pages/Courses'
+import CourseDetails from './CourseDetails'
+import Navbar2 from './components/Navbar2'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className='bg-black h-screen'>
+      <Navbar />
+      <Navbar2 />
+      
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/about' element={<About />}></Route>
+
+        {/* Dynamic Routing */}
+        <Route path='/courses' element={<Courses />}></Route>
+        <Route path='/courses/:name' element={<CourseDetails />}></Route>
+
+        {/* Nested Route */}
+        <Route path='/product' element={<Product />}>
+            <Route path='men' element={<Men />}></Route>
+            <Route path='women' element={<Women />}></Route>
+        </Route>
+        
+
+        <Route path='*' element={<NotFound />}></Route>  
+      </Routes>
+
+      <Footer />
+    </div>
   )
 }
 
